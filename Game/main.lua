@@ -1,31 +1,28 @@
-
+--hides the status bar on iOS devices
+display.setStatusBar( display.HiddenStatusBar );
+--device width // this is a global variable
 _W = display.viewableContentWidth;
+--devices height // this is a global variable
 _H = display.viewableContentHeight;
-
-
-
 --modules
-local storyboard=require ( "storyboard" )
-local myData = require ("myData")
-local widget = require ( "widget" )
-local json = require("json")
+local composer = require("composer");
+local myData = require ("myData");
+local dbFunctions = require("dbFunctions");
 
+dbFunctions.createPlayerDBTable();
 
-
-local creategameQuestions = require ( "creategameQuestions" )
-local addGameQuestions =require ( "addGameQuestions" )
+--local creategameQuestions = require ( "creategameQuestions" )
+--local addGameQuestions =require ( "addGameQuestions" )
 
 
 --create game databases
-creategameQuestions.creategameQuestions()
+--creategameQuestions.creategameQuestions()
 
 --add questions in the database
-addGameQuestions.addGameQuestions()
+--addGameQuestions.addGameQuestions()
 
 
-
-display.setStatusBar( display.HiddenStatusBar ) 
 -- myData.gameCat = "Luzon"
-storyboard.gotoScene("game")
+--storyboard.gotoScene("game")
 
 
