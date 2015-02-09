@@ -1,7 +1,7 @@
 --this is where database related functions are stored
 
 local sqlite = require("sqlite3");
-local path = system.pathForFile( "db.sqlite" , system.DocumentsDirectory );
+local path = system.pathForFile( "db.sqlite" , system.DocumentsDirectory ); --path where the db is located
 local db = nil; --variable for db operation
 local dbErrmsg = nil; --variable for sql error msg
 local sql = nil; --variable for sql statements
@@ -63,12 +63,16 @@ local M = {}
 			--"UnknownCode"
 			print( "Sqlite || Unknown Error" );
 		end
+
+		return false;
+
 	end
 
 	--creates a table in the db for the player data
 	M.createPlayerDBTable = function ()
 		--opens the path and put the reference in a variable
 		db = sqlite.open(path);
+
 		--sql statement
 		sql = [[CREATE TABLE IF NOT EXISTS playerData (
 			id INTEGER PRIMARY KEY,
@@ -77,17 +81,26 @@ local M = {}
 			status
 			);
 		]];
+
 		--execute the sql statement
 		result = db:exec(sql);
 
+			--checks if the sql executes successfully
 			if (result == 0) then
 				message = "Sqlite || playerData table successfully created/found";
 				print( message );
+				--closes the db connection // close any db connection when you are done using it
 				db:close();
+				--return statement
+				return true;
+			--there is error while executing the sql statement
 			else
+				--gets the error statement
 				dbErrmsg = db:errmsg()
+				--pass it to error handler
 				M.DBErrorHandler (result,dbErrmsg,sql);
 			end
+
 	end
 
 return M
