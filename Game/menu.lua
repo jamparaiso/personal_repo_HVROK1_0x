@@ -84,6 +84,8 @@ function scene:createScene( event )
 	local background = display.newImage("images/Background.png")
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
+	background.width = screenW;
+	background.height = screenH;
 
 
 	bgGroup:insert(background)

@@ -5,14 +5,14 @@ settings = {
 	
 	orientation = {
 		default = "landscapeRight",
-		supported = { "landscapeRight", }
+		supported = { "landscapeRight", "landscapeLeft" }
 	},
 	
 	iphone = {
 		plist = {
 			UIStatusBarHidden = false,
 			UIPrerenderedIcon = true, -- set to false for "shine" overlay
-			UIApplicationExitsOnSuspend = true,
+			UIApplicationExitsOnSuspend = false,
 		}
 	},
 	

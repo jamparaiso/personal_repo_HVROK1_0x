@@ -8,7 +8,7 @@ local sql = nil; --variable for sql statements
 local M = {}
 -- Put all functions below this line
 
-	--handles sqlite error
+	--handles sqlite functions
 	M.DBHandler = function ( sqlStmnt, TableName )
 
 		local db = nil;
@@ -163,4 +163,5 @@ local M = {}
 
 	end
 
+-----------------------------------------------------------------
 return M

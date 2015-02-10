@@ -10,6 +10,7 @@ _H = display.viewableContentHeight;
 local composer = require("composer");
 local myData = require ("myData");
 local dbFunctions = require("dbFunctions");
+local storyboard = require("storyboard")
 
 --creates database for player data
 dbFunctions.createPlayerDBTable();
@@ -26,8 +27,7 @@ dbFunctions.createQuestionsDBTable();
 --add questions in the database
 --addGameQuestions.addGameQuestions()
 
-
--- myData.gameCat = "Luzon"
---storyboard.gotoScene("game")
+myData.gameCat = "Luzon"
+storyboard.gotoScene("menu")
 
 

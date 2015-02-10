@@ -3,7 +3,7 @@ application =
 	content =
 	{
 		--graphicsCompatibility = 1;
-		fps = 60,			-- Desired frame rate 
+		fps = 30,			-- Desired frame rate 
 		width = 320,		-- Desired width of the application
 		height = 480,		-- Desired height of the application
    		---specify the audioPlayFrequency parameter. This optimization hint prompts OpenAL to mix/play at a specific frequency.	
