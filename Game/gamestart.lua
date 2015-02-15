@@ -142,13 +142,13 @@ function scene:createScene(e)
 		Background1.y = 271
 		bgGroup:insert(Background1)
 
-	local background = display.newImage("images/Background1.png")
+	local background = display.newImage("images/background1.png")
 		background.x = display.contentCenterX
 		background.y = 110
 		background:scale(1.1,0.9)
 		bgGroup:insert(background)
 
-	local ground = display.newImage("images/Ground.png", screenW, 82)
+	local ground = display.newImage("images/ground.png", screenW, 82)
 		ground.anchorX = 0
 		ground.anchorY = 2
 		ground.x, ground.y = -200, 663
@@ -159,14 +159,15 @@ function scene:createScene(e)
 ------------------------------------------------Heart Hp-----------------------------------
 	local pos = 0;
 -- display heart
-	local totalHp = 3
+	local totalHp = tonumber( myData.totalHP)
+	print( totalHp )
 	for j=1,totalHp do
 		-- tmpVarHeart = "heart_"..j
 		
 		-- hpDisplayer(j)
 
 
-	local tmpVarHeart = display.newImage("images/Heart.png")
+	local tmpVarHeart = display.newImage("images/heart.png")
 	table.insert(heartStorage,tmpVarHeart)
 	
 	heartStorage[j].x = 33 + pos
@@ -180,13 +181,13 @@ function scene:createScene(e)
 -- end of heart
 
 	----------------------------------------------Potions-------------------------------------------
-local letterpotion = display.newImage("images/LetterPots.png")
+local letterpotion = display.newImage("images/letterpots.png")
 		letterpotion.x = 50
 		letterpotion.y = 290
 		letterpotion:scale(.2,.2)
 		imagegroup:insert(letterpotion)
 
-local hppotion = display.newImage("images/HPPots.png")
+local hppotion = display.newImage("images/hppots.png")
 		hppotion.x = 20
 		hppotion.y = 289
 		hppotion:scale(.2,.2)
@@ -198,8 +199,8 @@ local hppotion = display.newImage("images/HPPots.png")
 	height = 20,
 	x = halfW+195,
 	y = halfH+140,
-	defaultFile = "buttons/GiveUpOn.png",
-	overFile = "buttons/GiveUpOff.png",
+	defaultFile = "buttons/giveupon.png",
+	overFile = "buttons/giveupoff.png",
 	}
 
 	local MenuButton = widget.newButton
@@ -208,8 +209,8 @@ local hppotion = display.newImage("images/HPPots.png")
 	y = 20,
 	width = 70,
 	height = 25,
-	defaultFile = "buttons/Menu.png",
-	overFile = "buttons/MenuOff.png",
+	defaultFile = "buttons/menu.png",
+	overFile = "buttons/menuoff.png",
 	onEvent = GobackMenu,
 	}
 
@@ -432,9 +433,18 @@ local function checkAns()
 					local j = math.random( 1,2 )
 					myData.playSound("wrongSound"..j)	
 
+					local translistener = function ( )
+						storyboard.gotoScene( "reloadgame")
+					end
+					if (myData.totalHP ~= 0) then
+						myData.totalHP = myData.totalHP - 1
+					end
+					transition.to( orc, {x=20, y=210 , onComplete = translistener} )
+					--transition.to( orc2, {x=20, y=210, onComplete = translistener} )
 
-					storyboard.gotoScene( "reloadgame")
-	
+					
+
+
 
 
 					-- native.showAlert( "Game Alert!", "Sorry Try Again",{ "Ok" }, function() end)
@@ -454,8 +464,8 @@ end
 	height = 20,
 	x = halfW+195,
 	y = halfH+115,
-	defaultFile = "buttons/SubmitButtonOn.png",
-	overFile = "buttons/SubmitButtonOff.png",
+	defaultFile = "buttons/submitbuttonon.png",
+	overFile = "buttons/submitbuttonoff.png",
 	onEvent = SubmitButtonEventHandler,
 	}
 	bgGroup:insert(SubmitButton)

@@ -59,7 +59,7 @@ local function NextButtonEventHandler(event)
 	end
 function scene:createScene( event )
 	local screenGroup = self.view
-	local background = display.newImage("Images/First1.png")
+	local background = display.newImage("Images/first1.png")
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 
@@ -68,8 +68,8 @@ function scene:createScene( event )
 		y = 290,
 		width = 70,
 		height = 25,
-		defaultFile = "Buttons/Next.png",
-		overFile = "Buttons/NextOff.png",
+		defaultFile = "Buttons/next.png",
+		overFile = "Buttons/nextoff.png",
 		onEvent = NextButtonEventHandler,
 	} );
 	
@@ -80,8 +80,8 @@ function scene:createScene( event )
 	y = 20,
 	width = 70,
 	height = 25,
-	defaultFile = "Buttons/Menu.png",
-	overFile = "Buttons/MenuOff.png",
+	defaultFile = "Buttons/menu.png",
+	overFile = "Buttons/menuoff.png",
 	onEvent = MenuButtonEventHandler,
 }
 	local SkipButton = widget.newButton
@@ -90,8 +90,8 @@ function scene:createScene( event )
 	y = 20,
 	width = 70,
 	height = 25,
-	defaultFile = "Buttons/Skip_On.png",
-	overFile = "Buttons/Skip_Off.png",
+	defaultFile = "Buttons/skipon.png",
+	overFile = "Buttons/skipoff.png",
 	onEvent = SkipButtonEventHandler,
 }
 

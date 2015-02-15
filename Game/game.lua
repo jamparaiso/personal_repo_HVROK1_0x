@@ -141,8 +141,8 @@ function scene:createScene(e)
 		},
 		--defaultColor = {201,107,61},
 		--overColor = {219,146,85},
-		defaultFile = "buttons/Menu.png",
-		overFile = "buttons/MenuOff.png",
+		defaultFile = "buttons/menu.png",
+		overFile = "buttons/menuoff.png",
 		onRelease = backmenu,
 	} )	
 
@@ -170,8 +170,8 @@ function scene:createScene(e)
 			-- 	default = {0,0,0},
 			-- 	over = {255,255,255}
 			-- },
-			defaultFile = "buttons/".. string.lower(btnData[i].id).. "Press.png",
-			overFile = "buttons/".. string.lower(btnData[i].id).. "Pressed.png",	
+			defaultFile = "buttons/".. string.lower(btnData[i].id).. "press.png",
+			overFile = "buttons/".. string.lower(btnData[i].id).. "pressed.png",	
 			onRelease = gameCatHandler,
 			} ) 		
 

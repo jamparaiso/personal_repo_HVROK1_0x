@@ -18,6 +18,8 @@ M._HH = _HH
 local halfW = display.contentCenterX
 local halfH = display.contentCenterY
 
+ M.totalHP = 3
+
 
 local screenW = display.contentWidth
 local screenH = display.contentHeight

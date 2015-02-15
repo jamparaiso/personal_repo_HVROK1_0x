@@ -81,7 +81,7 @@ function scene:createScene( event )
 	screenGroup:insert(uiGroup)
 	
 
-	local background = display.newImage("images/Background.png")
+	local background = display.newImage("images/background.png")
 	background.x = display.contentCenterX
 	background.y = display.contentCenterY
 	background.width = screenW;
@@ -90,7 +90,7 @@ function scene:createScene( event )
 
 	bgGroup:insert(background)
 
-	local gameTitle = display.newImage("images/GameTitle.png")
+	local gameTitle = display.newImage("images/gametitle.png")
 	gameTitle.x = 250	
 	gameTitle.y = 80
 
@@ -100,8 +100,8 @@ function scene:createScene( event )
 		y = 115,
 		width = 210,
 		height = 32,
-		defaultFile = "buttons/Start.png",
-		overFile = "buttons/StartOff.png",
+		defaultFile = "buttons/start.png",
+		overFile = "buttons/startoff.png",
 		onEvent = StartButtonEventHandler,
 	}
 
@@ -111,8 +111,8 @@ function scene:createScene( event )
 	y = halfH,
 	width = 210,
 	height = 32,
-	defaultFile = "buttons/Options.png",
-	overFile = "buttons/OptionOff.png",
+	defaultFile = "buttons/options.png",
+	overFile = "buttons/optionoff.png",
 	onEvent = OptionButtonEventHandler,
 	}
 
@@ -123,8 +123,8 @@ function scene:createScene( event )
 	y = 205,
 	width = 210,
 	height = 32,
-	defaultFile = "buttons/Exit.png",
-	overFile = "buttons/ExitOff.png",
+	defaultFile = "buttons/exit.png",
+	overFile = "buttons/exitoff.png",
 	onEvent = exitapp,
 }
 	uiGroup:insert(gameTitle)

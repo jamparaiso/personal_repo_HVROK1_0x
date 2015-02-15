@@ -7,25 +7,26 @@ _W = display.viewableContentWidth;
 _H = display.viewableContentHeight;
 
 --modules
-local composer = require("composer");
+--local composer = require("composer");
 local myData = require ("myData");
 local dbFunctions = require("dbFunctions");
+local globals = require("globals")
 local storyboard = require("storyboard")
 
 --creates database for player data
-dbFunctions.createPlayerDBTable();
+--dbFunctions.createPlayerDBTable();
 --creates database for game questions
-dbFunctions.createQuestionsDBTable();
+--dbFunctions.createQuestionsDBTable();
 
---local creategameQuestions = require ( "creategameQuestions" )
---local addGameQuestions =require ( "addGameQuestions" )
+local creategameQuestions = require ( "creategameQuestions" )
+local addGameQuestions =require ( "addGameQuestions" )
 
 
 --create game databases
---creategameQuestions.creategameQuestions()
+creategameQuestions.creategameQuestions()
 
 --add questions in the database
---addGameQuestions.addGameQuestions()
+addGameQuestions.addGameQuestions()
 
 myData.gameCat = "Luzon"
 storyboard.gotoScene("menu")
